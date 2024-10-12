@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "format": "prettier --write .",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
@@ -12,6 +13,7 @@
   "dependencies": {
     "html-to-json-parser": "^2.0.1",
     "nuxt": "^3.13.0",
+    "ufo": "^1.5.4",
     "vue": "latest",
     "vue-router": "latest"
   },

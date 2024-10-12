@@ -1,0 +1,52 @@
+[
+  {
+    "id": 3796,
+    "name": "Mondstadt",
+    "icon_url": "https://upload-static.hoyoverse.com/hoyolab-wiki/2023/04/26/169177528/a19531bd8e93b793b79bfe1499b5b5d7_1821424930343002645.png"
+  },
+  {
+    "id": 3797,
+    "name": "Liyue",
+    "icon_url": "https://upload-static.hoyoverse.com/hoyolab-wiki/2023/04/26/169177528/5968bc73f375ee1e3704302541c83c7f_8085923692366886863.png"
+  },
+  {
+    "id": 3798,
+    "name": "Inazuma",
+    "icon_url": "https://upload-static.hoyoverse.com/hoyolab-wiki/2023/04/26/169177528/fe011f0f93e3259d28b0272d0db961b7_4214171043320223201.png"
+  },
+  {
+    "id": 3799,
+    "name": "Sumeru",
+    "icon_url": "https://upload-static.hoyoverse.com/hoyolab-wiki/2023/04/26/169177528/f77d0c308b54728b6a1f3bc525e42955_1982808021226771999.png"
+  },
+  {
+    "id": 3979,
+    "name": "Fontaine",
+    "icon_url": "https://upload-static.hoyoverse.com/hoyolab-wiki/2023/08/11/77454259/decfebf39c4d3b6e22cf9f28c98288f6_2534930988116773859.png"
+  },
+  {
+    "id": 4809,
+    "name": "Natlan",
+    "icon_url": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2024/08/31/237301566/8694aaf89d32e75eca416ec7fe41e487_8636855791292057309.png"
+  },
+  {
+    "id": 4811,
+    "name": "Khaenri'ah",
+    "icon_url": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2024/06/11/237301566/93cd2bc9b90c8b87b1f8cbdbe95b4b9d_7086984801760748.png"
+  },
+  {
+    "id": 4813,
+    "name": "Remuria",
+    "icon_url": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2024/04/29/237301566/4f78eb7e03b130ca2efba77b4d2692bb_8160479304295384345.png"
+  },
+  {
+    "id": 5575,
+    "name": "Sal Vindagnyr",
+    "icon_url": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2024/05/01/237301566/93cd2bc9b90c8b87b1f8cbdbe95b4b9d_9020619106188158283.png"
+  },
+  {
+    "id": 5576,
+    "name": "Byakuyakoku",
+    "icon_url": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2024/05/01/237301566/a0baeebc8fab0068c0f408f26bfbf7ef_4019332913208237393.png"
+  }
+]

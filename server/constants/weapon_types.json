@@ -1,0 +1,27 @@
+[
+  {
+    "id": 0,
+    "name": "Sword",
+    "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/03/27/eb8602badf0ade7c03650a440d188ce1_4346782947893420142.png"
+  },
+  {
+    "id": 1,
+    "name": "Claymore",
+    "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/03/27/4b65ed8d8fd30705265fa10ee65c8b61_7363045695641018717.png"
+  },
+  {
+    "id": 2,
+    "name": "Polearm",
+    "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/03/27/9c0f0c167f2753035b78c0aed9f01b9f_3170160339356492715.png"
+  },
+  {
+    "id": 3,
+    "name": "Bow",
+    "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/03/27/e38debacfd0147020895322333ea9d2a_4867338674175003782.png"
+  },
+  {
+    "id": 4,
+    "name": "Catalyst",
+    "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/03/27/91c80bbf63e574fc6d6b1cb8563cf8e3_5665224225336557820.png"
+  }
+]

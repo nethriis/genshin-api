@@ -1,0 +1,37 @@
+[
+  {
+    "id": 0,
+    "name": "Anemo",
+    "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/03/27/6b5c0d861fd1b4791bd602d3e7296598_8700657350379813969.png"
+  },
+  {
+    "id": 1,
+    "name": "Geo",
+    "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/03/27/9c4cd6e14b87fc262cca36e6d0e9bdb0_1526899214861833594.png"
+  },
+  {
+    "id": 2,
+    "name": "Electro",
+    "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/03/27/16d344b6abbc369a2db9d46d6f31305b_7144738962629629573.png"
+  },
+  {
+    "id": 3,
+    "name": "Dendro",
+    "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/03/27/bda7c6cf71ea059c6abc086405a7cdd5_1717146848708050949.png"
+  },
+  {
+    "id": 4,
+    "name": "Hydro",
+    "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/03/27/f54c8f0dae23fced358c28126f220a11_8997562060019157249.png"
+  },
+  {
+    "id": 5,
+    "name": "Pyro",
+    "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/03/27/ac3123b42bf631685287e76c8c834a6c_564491877314389852.png"
+  },
+  {
+    "id": 6,
+    "name": "Cryo",
+    "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/03/27/157c22f5fd473d3c1684c6ee981540b6_1601711336893201442.png"
+  }
+]
