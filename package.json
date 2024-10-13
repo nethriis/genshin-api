@@ -11,6 +11,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/fonts": "^0.10.0",
+    "@nuxt/icon": "^1.5.6",
+    "@nuxtjs/tailwindcss": "^6.12.1",
     "html-to-json-parser": "^2.0.1",
     "nuxt": "^3.13.0",
     "ufo": "^1.5.4",
