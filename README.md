@@ -1,75 +1,20 @@
-# Nuxt 3 Minimal Starter
+# Teyvat-dev
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Teyvat-dev is an open-source API that provides information about Genshin Impact.
 
-## Setup
+## Usage
 
-Make sure to install the dependencies:
+This API offers various endpoints for retrieving information about the game. The base URL for the API is https://teyvat.dev/api.
 
-```bash
-# npm
-npm install
+### Endpoints
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- `/characters`: Get all characters
+- `/characters/:id`: Get a character by ID
+- `/weapons`: Get all weapons
+- `/weapons/:id`: Get a weapon by ID
+- `/materials`: Get all materials
+- `/materials/:id`: Get a material by ID
+- `/nations`: Get all nations
+- `/nations/:id`: Get a nation by ID
+- `/elements`: Get all elements
+- `/elements/:id`: Get an element by ID
