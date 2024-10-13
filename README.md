@@ -4,7 +4,7 @@ Teyvat-dev is an open-source API that provides information about Genshin Impact.
 
 ## Usage
 
-This API offers various endpoints for retrieving information about the game. The base URL for the API is https://teyvat.dev/api.
+This API offers various endpoints for retrieving information about the game. The base URL for the API is https://teyvat-dev.vercel.app/api.
 
 ### Endpoints
 
