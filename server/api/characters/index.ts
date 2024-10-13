@@ -1,4 +1,4 @@
-import type { EntryItem, Response } from '~/server/types'
+import type { EntryItem, Response } from '@/server/types'
 
 export default defineEventHandler(async () => {
   let page = 1

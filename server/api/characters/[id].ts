@@ -1,4 +1,4 @@
-import type { EntryPage, Response } from '~/server/types'
+import type { EntryPage, Response } from '@/server/types'
 
 export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, 'id')
