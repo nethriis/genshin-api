@@ -12,7 +12,7 @@ export interface MaterialDetails {
   name: string
   description: string
   icon_url: string
-  type: string
+  types: string[]
   sources: Sources
   region: Region | null
   version_released: string

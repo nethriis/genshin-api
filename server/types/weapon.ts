@@ -26,5 +26,5 @@ export interface WeaponDetails {
   version_released: string
   original_img_url: string
   awakened_img_url: string
-  card_img_url: string | null
+  card_img_url: string
 }

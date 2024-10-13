@@ -1,16 +1,18 @@
 import { encode } from 'ufo'
-import { rawToRarity } from '.'
+import { purgeHTML, rawToRarity } from '.'
 import elements from '../constants/elements.json' assert { type: 'json' }
 import weaponTypes from '../constants/weapon_types.json' assert { type: 'json' }
 import nations from '../constants/nations.json' assert { type: 'json' }
 import type {
+  AttributesData,
   Character,
   CharacterDetails,
-  ComponentData,
-  Entry
+  EntryItem,
+  EntryPage,
+  GalleryData
 } from '../types'
 
-export const entryToCharacter = (entry: Entry<false>): Character => {
+export const entryToCharacter = (entry: EntryItem): Character => {
   const element = elements.find(
     (e) => e.name === entry.filter_values.character_vision?.values[0]
   )
@@ -30,7 +32,7 @@ export const entryToCharacter = (entry: Entry<false>): Character => {
   }
 }
 
-export const entryToCharacterDetails = (entry: Entry): CharacterDetails => {
+export const entryToCharacterDetails = (entry: EntryPage): CharacterDetails => {
   const element = elements.find(
     (e) => e.name === entry.filter_values.character_vision?.values[0]
   )
@@ -38,14 +40,13 @@ export const entryToCharacterDetails = (entry: Entry): CharacterDetails => {
     (w) => w.name === entry.filter_values.character_weapon?.value_types[0].value
   )!
   const nation = nations.find(
-    (n) =>
-      n.name === entry.filter_values.character_region?.values[0].split(' ')[0]
+    (n) => n.name === entry.filter_values.character_region?.values[0]
   )
-  const attributes: ComponentData = JSON.parse(
+  const attributes: AttributesData = JSON.parse(
     entry.modules.find((m) => m.name === 'Attributes')?.components[0].data ||
       '{}'
   )
-  const gallery: ComponentData<false> = JSON.parse(
+  const gallery: GalleryData = JSON.parse(
     entry.modules.find((m) => m.name === 'Gallery')?.components[0].data || '{}'
   )
 
@@ -59,46 +60,47 @@ export const entryToCharacterDetails = (entry: Entry): CharacterDetails => {
       entry.filter_values.character_rarity?.values[0] || '0-Star'
     ),
     title:
-      attributes.list
-        .find((a) => a.key === 'Title')
-        ?.value[0].replace(/<\/?[^>]+(>|$)/g, '') || 'unknown',
+      purgeHTML(
+        attributes.list.find((a) => a.key === 'Title')?.value[0] || ''
+      ) || 'unknown',
     element: element || null,
     weapon_type: weaponType,
     region: nation || null,
     constellation:
-      attributes.list
-        .find((a) => a.key === 'Constellation')
-        ?.value[0].replace(/<\/?[^>]+(>|$)/g, '') || 'unknown',
+      purgeHTML(
+        attributes.list.find((a) => a.key === 'Constellation')?.value[0] || ''
+      ) || 'unknown',
     birthday:
-      attributes.list
-        .find((a) => a.key === 'Birthday')
-        ?.value[0].replace(/<\/?[^>]+(>|$)/g, '') || 'unknown',
+      purgeHTML(
+        attributes.list.find((a) => a.key === 'Birthday')?.value[0] || ''
+      ) || 'unknown',
     affiliation:
-      attributes.list
-        .find((a) => a.key === 'Affiliation')
-        ?.value[0].replace(/<\/?[^>]+(>|$)/g, '') || 'unknown',
+      purgeHTML(
+        attributes.list.find((a) => a.key === 'Affiliation')?.value[0] || ''
+      ) || 'unknown',
     voice_actors: {
       english:
-        attributes.list
-          .find((a) => a.key === 'English VA')
-          ?.value[0].replace(/<\/?[^>]+(>|$)/g, '') || 'unknown',
+        purgeHTML(
+          attributes.list.find((a) => a.key === 'English VA')?.value[0] || ''
+        ) || 'unknown',
       japanese:
-        attributes.list
-          .find((a) => a.key === 'Japanese VA')
-          ?.value[0].replace(/<\/?[^>]+(>|$)/g, '') || 'unknown',
+        purgeHTML(
+          attributes.list.find((a) => a.key === 'Japanese VA')?.value[0] || ''
+        ) || 'unknown',
       chinese:
-        attributes.list
-          .find((a) => a.key === 'Chinese VA')
-          ?.value[0].replace(/<\/?[^>]+(>|$)/g, '') || 'unknown',
+        purgeHTML(
+          attributes.list.find((a) => a.key === 'Chinese VA')?.value[0] || ''
+        ) || 'unknown',
       korean:
-        attributes.list
-          .find((a) => a.key === 'Korean VA')
-          ?.value[0].replace(/<\/?[^>]+(>|$)/g, '') || 'unknown'
+        purgeHTML(
+          attributes.list.find((a) => a.key === 'Korean VA')?.value[0] || ''
+        ) || 'unknown'
     },
     version_released:
-      attributes.list
-        .find((a) => a.key === 'Version Released')
-        ?.value[0].replace(/<\/?[^>]+(>|$)/g, '') || 'unknown',
+      purgeHTML(
+        attributes.list.find((a) => a.key === 'Version Released')?.value[0] ||
+          ''
+      ) || 'unknown',
     card_img_url: encode(gallery.pic)
   }
 }

@@ -110,15 +110,22 @@ export type Entry<T extends boolean = true> = T extends true
   ? EntryPage
   : EntryItem
 
-export interface ComponentData<T extends boolean = true> {
-  list: T extends true
-    ? {
-        id: string
-        key: string
-        value: [string]
-      }[]
-    : never
-  pic: T extends false ? string : never
+export interface AttributesData {
+  list: {
+    id: string
+    key: string
+    value: [string]
+  }[]
+}
+
+export interface GalleryData {
+  list: {
+    id: string
+    img: string
+    imgDesc: string
+    key: string
+  }[]
+  pic: string
 }
 
 export interface Response<T extends boolean = true> {

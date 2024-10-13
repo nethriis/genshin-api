@@ -29,6 +29,9 @@ export const htmlToJSON = async (html: string) => {
   return result
 }
 
+export const purgeHTML = (html: string) =>
+  html.replace(/<\/?[^>]+(>|$)/g, '').trim()
+
 export const isHTML = (html: string): boolean => {
   return /<[^>]+>/.test(html)
 }

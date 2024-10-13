@@ -1,4 +1,4 @@
-import type { Response } from '~/server/types'
+import type { EntryItem, Response } from '~/server/types'
 
 export default defineEventHandler(async () => {
   let page = 1
@@ -24,7 +24,9 @@ export default defineEventHandler(async () => {
       }
     )
 
-    results.push(...data.list.map((entry: any) => entryToCharacter(entry)))
+    results.push(
+      ...data.list.map((entry) => entryToCharacter(entry as any as EntryItem))
+    )
     if (!data || data.list.length < 50) break
     page++
   }
