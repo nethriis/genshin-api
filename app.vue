@@ -1,3 +1,7 @@
+<script setup lang="ts">
+defineOgImageComponent('Default')
+</script>
+
 <template>
   <div class="w-full h-screen flex items-center justify-center">
     <div class="flex flex-col items-center">
