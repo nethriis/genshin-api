@@ -59,15 +59,11 @@ export const entryToWeaponDetails = async (
       entry.filter_values.weapon_rarity?.values[0] || '0-Star'
     ),
     type: type,
-    sources: {
-      quest: !isHTML(rawSources || '')
-        ? {
-            id: JSON.parse(rawSources?.replace(/\$/g, '') || '[]')[0].ep_id,
-            name: JSON.parse(rawSources?.replace(/\$/g, '') || '[]')[0].name
-          }
-        : null,
-      drops: isHTML(rawSources || '') ? await htmlToJSON(rawSources || '') : []
-    },
+    sources: isHTML(rawSources || '')
+      ? await htmlToJSON(rawSources || '<div></div>')
+      : [
+          `Quest - ${JSON.parse(rawSources?.replace(/\$/g, '') || '[]')[0]?.name}`
+        ],
     secondary_attributes:
       purgeHTML(
         attributes.list.find((a) => a.key === 'Secondary Attributes')

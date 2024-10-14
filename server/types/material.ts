@@ -1,4 +1,4 @@
-import type { Region, Sources } from '.'
+import type { Region } from '.'
 
 export interface Material {
   id: number
@@ -13,7 +13,7 @@ export interface MaterialDetails {
   description: string
   icon_url: string
   types: string[]
-  sources: Sources
+  sources: string[]
   region: Region | null
   version_released: string
 }

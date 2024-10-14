@@ -1,5 +1,5 @@
 import { HTMLToJSON } from 'html-to-json-parser'
-import type { Character, Material, Nation, Weapon } from '../types'
+import type { Artifact, Character, Material, Nation, Weapon } from '../types'
 
 export * from './character'
 
@@ -50,4 +50,8 @@ export const isNation = (entry: Record<string, any>): entry is Nation => {
 
 export const isMaterial = (entry: Record<string, any>): entry is Material => {
   return entry.menu_id === '9'
+}
+
+export const isArtifact = (entry: Record<string, any>): entry is Artifact => {
+  return entry.menu_id === '5'
 }

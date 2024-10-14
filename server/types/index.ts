@@ -2,6 +2,7 @@ export type * from './character'
 export type * from './weapon'
 export type * from './nation'
 export type * from './material'
+export type * from './artifact'
 
 interface Component {
   component_id: string
@@ -78,6 +79,7 @@ export interface EntryItem {
   name: string
   desc: string
   icon_url: string
+  display_field: { [key: string]: string | undefined }
   filter_values: FilterValues
 }
 
@@ -116,6 +118,7 @@ export interface AttributesData {
     key: string
     value: [string]
   }[]
+  [key: string]: any | undefined
 }
 
 export interface GalleryData {
@@ -147,14 +150,4 @@ export interface Element {
 export interface Region {
   id: number
   name: string
-}
-
-export interface Quest {
-  id: number
-  name: string
-}
-
-export interface Sources {
-  quest: Quest | null
-  drops: string[]
 }

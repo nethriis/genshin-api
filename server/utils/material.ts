@@ -26,9 +26,8 @@ export const entryToMaterialDetails = async (
       '{}'
   )
   const rawSources = attributes.list.find((a) => a.key === 'Source')?.value[0]
-  const types = await htmlToJSON(
-    attributes.list.find((a) => a.key === 'Type')?.value[0] || ''
-  )
+  const rawTypes = attributes.list.find((a) => a.key === 'Type')?.value[0] || ''
+  const types = isHTML(rawTypes) ? await htmlToJSON(rawTypes) : [rawTypes]
   const region =
     purgeHTML(
       attributes.list.find((a) => a.key === 'Region')?.value[0] || ''
@@ -40,15 +39,11 @@ export const entryToMaterialDetails = async (
     icon_url: encode(entry.icon_url),
     description: purgeHTML(entry.desc),
     types,
-    sources: {
-      quest: !isHTML(rawSources || '')
-        ? {
-            id: JSON.parse(rawSources?.replace(/\$/g, '') || '[]')[0].ep_id,
-            name: JSON.parse(rawSources?.replace(/\$/g, '') || '[]')[0].name
-          }
-        : null,
-      drops: isHTML(rawSources || '') ? await htmlToJSON(rawSources || '') : []
-    },
+    sources: isHTML(rawSources || '')
+      ? await htmlToJSON(rawSources || '<div></div>')
+      : [
+          `Quest - ${JSON.parse(rawSources?.replace(/\$/g, '') || '[]')[0]?.name}`
+        ],
     region: nations.find((n) => n.name === region) || null,
     version_released:
       purgeHTML(

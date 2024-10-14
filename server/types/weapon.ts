@@ -1,4 +1,4 @@
-import type { Region, Sources } from '.'
+import type { Region } from '.'
 
 export interface WeaponType {
   id: number
@@ -20,7 +20,7 @@ export interface WeaponDetails {
   icon_url: string
   rarity: number | null
   type: WeaponType | null
-  sources: Sources
+  sources: string[]
   secondary_attributes: string | null
   region: Region | null
   version_released: string
