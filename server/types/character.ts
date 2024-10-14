@@ -8,6 +8,16 @@ interface VA {
   korean: string
 }
 
+interface Constellation {
+  name: string
+  img_url: string
+  levels: {
+    name: string
+    description: string
+    icon_url: string
+  }[]
+}
+
 export interface Character {
   id: number
   name: string
@@ -28,7 +38,7 @@ export interface CharacterDetails {
   element: Element | null
   weapon_type: WeaponType | null
   region: Region | null
-  constellation: string
+  constellation: Constellation | null
   birthday: string
   affiliation: string
   voice_actors: VA

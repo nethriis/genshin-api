@@ -49,6 +49,10 @@ export const entryToCharacterDetails = (entry: EntryPage): CharacterDetails => {
   const gallery: GalleryData = JSON.parse(
     entry.modules.find((m) => m.name === 'Gallery')?.components[0].data || '{}'
   )
+  const constellation: AttributesData = JSON.parse(
+    entry.modules.find((m) => m.name === 'Constellation')?.components[0].data ||
+      '{}'
+  )
 
   return {
     id: Number(entry.id),
@@ -66,10 +70,22 @@ export const entryToCharacterDetails = (entry: EntryPage): CharacterDetails => {
     element: element || null,
     weapon_type: weaponType,
     region: nation || null,
-    constellation:
-      purgeHTML(
-        attributes.list.find((a) => a.key === 'Constellation')?.value[0] || ''
-      ) || 'unknown',
+    constellation: attributes.list.find((a) => a.key === 'Constellation')
+      ? {
+          name: purgeHTML(
+            attributes.list.find((a) => a.key === 'Constellation')?.value[0] ||
+              ''
+          ),
+          img_url: encode(
+            gallery.list.find((g) => g.key === 'Constellation')?.img || ''
+          ),
+          levels: constellation.list.map((c: any) => ({
+            name: c.name,
+            description: purgeHTML(c.desc),
+            icon_url: encode(c.icon_url)
+          }))
+        }
+      : null,
     birthday:
       purgeHTML(
         attributes.list.find((a) => a.key === 'Birthday')?.value[0] || ''
