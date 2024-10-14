@@ -2,8 +2,22 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+      title: 'Teyvat Dev'
+    }
+  },
   css: ['~/assets/css/main.css'],
-  modules: ['@nuxt/fonts', '@nuxtjs/tailwindcss', '@nuxt/icon'],
+  modules: ['@nuxt/fonts', '@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxtjs/seo'],
+  site: {
+    url: 'https://teyvat-dev.vercel.app',
+    name: 'Teyvat Dev',
+    description:
+      'Teyvat-dev is an open-source API that provides information about Genshin Impact',
+    defaultLocale: 'en'
+  },
   tailwindcss: {
     viewer: false
   },
