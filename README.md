@@ -12,6 +12,8 @@ This API offers various endpoints for retrieving information about the game. The
 - `/characters/:id`: Get a character by ID
 - `/weapons`: Get all weapons
 - `/weapons/:id`: Get a weapon by ID
+- `/artifacts`: Get all artifacts
+- `/artifacts/:id`: Get an artifact by ID
 - `/materials`: Get all materials
 - `/materials/:id`: Get a material by ID
 - `/nations`: Get all nations
