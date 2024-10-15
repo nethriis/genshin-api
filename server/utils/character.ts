@@ -40,7 +40,8 @@ export const entryToCharacterDetails = (entry: EntryPage): CharacterDetails => {
     (w) => w.name === entry.filter_values.character_weapon?.value_types[0].value
   )!
   const nation = nations.find(
-    (n) => n.name === entry.filter_values.character_region?.values[0]
+    (n) =>
+      n.name === entry.filter_values.character_region?.values[0]?.split(' ')[0]
   )
   const attributes: AttributesData = JSON.parse(
     entry.modules.find((m) => m.name === 'Attributes')?.components[0].data ||
@@ -52,6 +53,9 @@ export const entryToCharacterDetails = (entry: EntryPage): CharacterDetails => {
   const constellation: AttributesData = JSON.parse(
     entry.modules.find((m) => m.name === 'Constellation')?.components[0].data ||
       '{}'
+  )
+  const talents: AttributesData = JSON.parse(
+    entry.modules.find((m) => m.name === 'Talents')?.components[0].data || '{}'
   )
 
   return {
@@ -86,6 +90,12 @@ export const entryToCharacterDetails = (entry: EntryPage): CharacterDetails => {
           }))
         }
       : null,
+    talents: talents.list.map((t: any) => ({
+      title: t.title,
+      description: purgeHTML(t.desc),
+      icon_url: encode(t.icon_url),
+      img_url: encode(t.talent_img)
+    })),
     birthday:
       purgeHTML(
         attributes.list.find((a) => a.key === 'Birthday')?.value[0] || ''

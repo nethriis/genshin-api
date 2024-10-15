@@ -18,6 +18,13 @@ interface Constellation {
   }[]
 }
 
+interface Talent {
+  title: string
+  description: string
+  icon_url: string
+  img_url: string
+}
+
 export interface Character {
   id: number
   name: string
@@ -39,6 +46,7 @@ export interface CharacterDetails {
   weapon_type: WeaponType | null
   region: Region | null
   constellation: Constellation | null
+  talents: Talent[]
   birthday: string
   affiliation: string
   voice_actors: VA
