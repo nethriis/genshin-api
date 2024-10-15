@@ -12,7 +12,7 @@ export const entryToArtifact = (entry: EntryItem): Artifact => {
     id: Number(entry.entry_page_id),
     name: entry.name,
     icon_url: encode(entry.icon_url),
-    reliquary_effects: entry.filter_values.reliquary_effects?.values || [],
+    reliquary_effects: entry.filter_values.reliquary_effect?.values || [],
     set_effects: {
       1: purgeHTML(entry.display_field.single_set_effect || '') || null,
       2: purgeHTML(entry.display_field.two_set_effect || '') || null,
@@ -47,8 +47,6 @@ export const entryToArtifactDetails = async (
     entry.modules.find((m) => m.name === 'Set')?.components[0].data || '{}'
   )
   const rawSources = baseInfo.list.find((a) => a.key === 'Source')?.value[0]
-
-  console.log(set.circlet_of_logos?.desc)
 
   return {
     id: Number(entry.id),
